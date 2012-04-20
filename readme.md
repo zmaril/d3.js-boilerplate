@@ -1,54 +1,56 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+# d3.js Boilerplate
 
-HTML5 Boilerplate is a professional front-end template that helps you build fast, robust, adaptable, and future-proof websites. Spend more time developing and less time reinventing the wheel.
-
-This project is the product of many years of iterative development and combined community knowledge. It does not impose a specific development philosophy or framework, so you're free to architect your code in the way that you want.
-
+d3.js Boilerplate is a template designed to help you build a
+sophisticated data driven document as fast as possible. 
 
 ## Quick start
 
-Clone the git repo - `git clone git://github.com/h5bp/html5-boilerplate.git` - or [download it](https://github.com/h5bp/html5-boilerplate/zipball/master)
+### Get the template
+Clone the git repo - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
+Rename - 'mv d3.js-boilerplate my-ballin-document'
 
+### Develop locally
+'cd my-ballin-project'
+'python -m SimpleHttpServer'
+Navigate to localhost:8000
+
+
+### Deploy Globally 
+Free hosting - 'heroku create my-ballin-document --stack cedar' 
+Commitin' - 'git commit -am "Tots my goats"'
+Pushin' - 'git push heroku master'
 
 ## Features
 
-* HTML5 ready. Use the new elements with confidence.
-* Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+).
-* Designed with progressive enhancement in mind.
-* CSS normalizations and common bug fixes.
-* IE-specific classes for easier cross-browser control.
-* A default print stylesheet, performance optimized.
-* Mobile browser optimizations.
-* Protection against any stray `console.log` causing JavaScript errors in IE6/7.
+* Based entirely on [HTML5 boilerplate](http://github.com/h5bp/html5-boilerplate). 
+* Comes with d3, underscore, jquery-ui and MathJax. 
+* Includes useful datasets, such as polygons for the world-countries
+  and united states. 
 * The latest jQuery via CDN, with a local fallback.
-* A custom Modernizr build for feature detection.
-* An optimized Google Analytics snippet.
-* Apache server caching, compression, and other configuration defaults for Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
-
+* rm is your friend. Remove anything you don't need. 
 
 ## Contributing
 
-Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boilerplate/wiki/contribute). Hundreds of developers have helped make the HTML5 Boilerplate what it is today.
+Anyone and everyone is welcome to contribute. 
 
-
-## Project information
-
-* Source: http://github.com/h5bp/html5-boilerplate
-* Web: http://html5boilerplate.com
-* Docs: http://html5boilerplate.com/docs
-* Twitter: http://twitter.com/h5bp
+### Current TODOS
+* Find more useful datasets to include. Zip codes? Time zones? 
+* Try to scale MathJax down some. Only the SVG components are used, so
+  everything else can fall away. 
+* Create a better example for the index. 
 
 
 ## License
 
 ### Major components:
 
-* jQuery: MIT/GPL license
+* jQuery/jQuery-ui: MIT/GPL license
 * Modernizr: MIT/BSD license
 * Normalize.css: Public Domain
+* d3.js: 
+* underscore
+* MathJax
+
 
 ### Everything else:
 
