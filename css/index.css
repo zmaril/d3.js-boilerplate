@@ -1,0 +1,23 @@
+body {
+  font: 10px sans-serif;
+}
+
+.axis {
+  stroke: #000;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+#rate-slider{
+width: 400px;
+}
+
+path.constant{
+stroke-dasharray: 9, 5;
+}

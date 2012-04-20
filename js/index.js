@@ -1,4 +1,4 @@
-var domain, funcs, graph, h, p, rate, redrawLines, svgLine, vis, w, x, xRules, y, yRules;
+var display, domain, funcs, graph, h, p, rate, redrawLines, slider, svgLine, vis, w, x, xRules, y, yRules;
 
 w = 482;
 
@@ -8,7 +8,9 @@ p = 20;
 
 rate = 1;
 
-$("#rate-slider").slider({
+display = $("<div>").attr("id", "rate-value").text("Rate Value: " + rate);
+
+slider = $("<div>").attr("id", "rate-slider").slider({
   value: rate,
   min: 0.01,
   max: 10,
@@ -16,9 +18,11 @@ $("#rate-slider").slider({
   slide: function(event, ui) {
     rate = ui.value;
     $("#rate-value").text("Rate Value: " + rate);
-    return drawLines();
+    return redrawLines();
   }
 });
+
+$("#main").append(slider, display);
 
 domain = _.range(100);
 

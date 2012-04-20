@@ -11,18 +11,24 @@ p = 20
 #The "rate" at which the functions approach 0/1.
 rate = 1
 
+display =  $("<div>").attr("id","rate-value")
+ .text("Rate Value: #{rate}")
+
+slider = $("<div>").attr("id","rate-slider")
+  .slider(
+    value : rate
+    min : 0.01
+    max : 10
+    step: 0.01
+    slide : (event,ui)-> #This tells the slider the function to
+                         #callduring a change
+      rate = ui.value
+      $("#rate-value").text("Rate Value: #{rate}")
+      redrawLines()
+  )
+
 #jQuery ui plugin- finds an element and makes it into a slider.
-$("#rate-slider").slider(
-  value : rate
-  min : 0.01
-  max : 10
-  step: 0.01
-  slide : (event,ui)-> #This tells the slider the function to call
-                       #during a change
-    rate = ui.value
-    $("#rate-value").text("Rate Value: #{rate}")
-    drawLines()
-)
+$("#main").append(slider,display)
 
 # The domain over which the functions will be mapped
 domain = _.range(100)
