@@ -2,9 +2,9 @@
 
 d3.js Boilerplate is a template designed to help you build a
 sophisticated data driven document as fast as possible. By providing a
-full featured template and encouraging 
-the use of coffeescript and various other javascript libraries, this
-project hopes to cut down on development time. 
+full featured template and encouraging the use of coffeescript and
+various other javascript libraries, this project hopes to cut down on
+development time. 
 
 ## Quick start
 
@@ -34,7 +34,7 @@ project hopes to cut down on development time.
 
 ## Contributing
 
-Anyone and everyone is welcome to contribute. 
+Tralfamadore needs more pull requests! 
 
 ### Current TODOS
 * Find more useful datasets to include. Zip codes? Time zones? 
@@ -55,6 +55,8 @@ Anyone and everyone is welcome to contribute.
 
 ### Everything else:
 
-Public domain. If you [sent me](https://twitter.com/#!/ZackMaril) a
+Public domain. 
+
+If you [sent me](https://twitter.com/#!/ZackMaril) a
 tweet if you cloned this, I would be all warm and fuzzy for a few
-minutes.
+minutes. If you needed some d3.js work done yesterday, I know [a guy](https://www.odesk.com/users/~~80bea7ba2750c34b). 
