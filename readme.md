@@ -10,17 +10,17 @@ project hopes to cut down on development time.
 
 ### Get the template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
-* Rename - 'mv d3.js-boilerplate my-ballin-document'
+* Rename - `mv d3.js-boilerplate my-ballin-document`
 
 ### Develop locally
-* Move 'cd my-ballin-project'
-* Host 'python -m SimpleHttpServer'
+* Move `cd my-ballin-document`
+* Host `python -m SimpleHTTPServer`
 * Navigate to localhost:8000
 
 ### Deploy Globally 
-* Host - 'heroku create my-ballin-document --stack cedar' 
-* Commit - 'git commit -am "Tots my goats"'
-* Push - 'git push heroku master'
+* Host - `heroku create my-ballin-document --stack cedar`
+* Commit - `git commit -am "Totes my goats"`
+* Push - `git push heroku master`
 
 ## Features
 
