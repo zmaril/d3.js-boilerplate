@@ -6,19 +6,19 @@ sophisticated data driven document as fast as possible.
 ## Quick start
 
 ### Get the template
-Clone the git repo - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
-Rename - 'mv d3.js-boilerplate my-ballin-document'
+* Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
+* Rename - 'mv d3.js-boilerplate my-ballin-document'
 
 ### Develop locally
-'cd my-ballin-project'
-'python -m SimpleHttpServer'
-Navigate to localhost:8000
+* Move 'cd my-ballin-project'
+* Host 'python -m SimpleHttpServer'
+* Navigate to localhost:8000
 
 
 ### Deploy Globally 
-Free hosting - 'heroku create my-ballin-document --stack cedar' 
-Commitin' - 'git commit -am "Tots my goats"'
-Pushin' - 'git push heroku master'
+* Host - 'heroku create my-ballin-document --stack cedar' 
+* Commit - 'git commit -am "Tots my goats"'
+* Push - 'git push heroku master'
 
 ## Features
 
