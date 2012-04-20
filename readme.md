@@ -58,5 +58,5 @@ Tralfamadore needs more pull requests!
 Public domain. 
 
 If you [sent me](https://twitter.com/#!/ZackMaril) a
-tweet if you cloned this, I would be all warm and fuzzy for a few
+tweet when you cloned this, I would be all warm and fuzzy for a few
 minutes. If you needed some d3.js work done yesterday, I know [a guy](https://www.odesk.com/users/~~80bea7ba2750c34b). 
