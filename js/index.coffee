@@ -1,3 +1,9 @@
+########
+#
+# Constant parameters
+#
+########
+
 #Width of svg graphic
 w = 482
 
@@ -7,9 +13,32 @@ h = 482
 #Padding of svg graphic
 p = 20
 
+# The domain over which the functions will be mapped
+domain = _.range(100)
 
-#The "rate" at which the functions approach 0/1.
+
+########
+#
+# Changing variables
+#
+########
+
+#The "rate" at which the functions approach 0 or 1.
 rate = 1
+
+#Object that holds onto the functions
+funcs =
+  top : (x) -> (1+2*Math.atan(x/rate)/Math.PI)/2
+  bottom: (x) -> (1-2*Math.atan(x/(100*rate))/Math.PI)/2
+  constant: (x) -> 0.3
+  curve: (x) -> Math.pow(2,(x/100))-0.8
+
+
+########
+#
+# Creating the interface
+#
+########
 
 display =  $("<div>").attr("id","rate-value")
  .text("Rate Value: #{rate}")
@@ -27,12 +56,21 @@ slider = $("<div>").attr("id","rate-slider")
       redrawLines()
   )
 
-#jQuery ui plugin- finds an element and makes it into a slider.
 $("#main").append(slider,display)
 
-# The domain over which the functions will be mapped
-domain = _.range(100)
+########
+#
+# d3.js charting objects
+#
+########
 
+#Setting up the object that represents the main "canvas"
+vis = d3.select('#main')
+  .append('svg')
+    .attr("width",w+p*2)
+    .attr("height",h+p*2)
+  .append('g')
+    .attr("transform","translate(#{p},#{p})")
 
 #Setting up the scaling function for x
 x=d3.scale.linear()
@@ -44,13 +82,18 @@ y=d3.scale.linear()
   .domain([-0.1,1.1])
   .range([h, 0])
 
-#Setting up the object that represents the main "canvas"
-vis = d3.select('body')
-  .append('svg')
-    .attr("width",w+p*2)
-    .attr("height",h+p*2)
-  .append('g')
-    .attr("transform","translate(#{p},#{p})")
+#Function which draws a line.
+#Used many times so pulled out.
+svgLine = d3.svg.line()
+    .x((d)-> x(d.x))
+    .y((d)-> y(d.y))
+
+########
+#
+# Set up the chart with initial data
+#
+########
+
 
 #Draw the horizontal x axis
 xRules = vis.append("g")
@@ -132,26 +175,12 @@ vis.append("foreignObject")
   .append("xhtml:body")
   .html("\\(C(i)\\)")
 
-
-#Create an array of xy objects to graph.
+# Create an array of xy objects to graph.
 # Filter out the C(i) function so that it doesn't
 # go outside the graph
 graph = (f) ->
   all = _.map(domain, (x)-> x: x,y: f(x))
   _.filter(all, (pair)-> pair.y < 1)
-
-#Object that holds onto the functions
-funcs =
-  top : (x) -> (1+2*Math.atan(x/rate)/Math.PI)/2
-  bottom: (x) -> (1-2*Math.atan(x/(100*rate))/Math.PI)/2
-  constant: (x) -> 0.3
-  curve: (x) -> Math.pow(2,(x/100))-0.8
-
-#Function which draws a line.
-#Used many times so pulled out.
-svgLine = d3.svg.line()
-    .x((d)-> x(d.x))
-    .y((d)-> y(d.y))
 
 #Create the graph of funcs.top and then plot it.
 vis.append("g")
@@ -180,6 +209,13 @@ vis.append("g")
   .append("path")
   .attr("class","curve line")
   .attr("d", svgLine)
+
+
+########
+#
+# Redraw that which needs to change
+#
+########
 
 #Goes in and selects the lines to be redrawn by class.
 #The functions change as rate changes.

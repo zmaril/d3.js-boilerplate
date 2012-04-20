@@ -6,7 +6,24 @@ h = 482;
 
 p = 20;
 
+domain = _.range(100);
+
 rate = 1;
+
+funcs = {
+  top: function(x) {
+    return (1 + 2 * Math.atan(x / rate) / Math.PI) / 2;
+  },
+  bottom: function(x) {
+    return (1 - 2 * Math.atan(x / (100 * rate)) / Math.PI) / 2;
+  },
+  constant: function(x) {
+    return 0.3;
+  },
+  curve: function(x) {
+    return Math.pow(2, x / 100) - 0.8;
+  }
+};
 
 display = $("<div>").attr("id", "rate-value").text("Rate Value: " + rate);
 
@@ -24,13 +41,17 @@ slider = $("<div>").attr("id", "rate-slider").slider({
 
 $("#main").append(slider, display);
 
-domain = _.range(100);
+vis = d3.select('#main').append('svg').attr("width", w + p * 2).attr("height", h + p * 2).append('g').attr("transform", "translate(" + p + "," + p + ")");
 
 x = d3.scale.linear().domain([-3, 110]).range([0, w]);
 
 y = d3.scale.linear().domain([-0.1, 1.1]).range([h, 0]);
 
-vis = d3.select('body').append('svg').attr("width", w + p * 2).attr("height", h + p * 2).append('g').attr("transform", "translate(" + p + "," + p + ")");
+svgLine = d3.svg.line().x(function(d) {
+  return x(d.x);
+}).y(function(d) {
+  return y(d.y);
+});
 
 xRules = vis.append("g").attr("class", "axis").append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", y(0)).attr("y2", y(1));
 
@@ -62,27 +83,6 @@ graph = function(f) {
     return pair.y < 1;
   });
 };
-
-funcs = {
-  top: function(x) {
-    return (1 + 2 * Math.atan(x / rate) / Math.PI) / 2;
-  },
-  bottom: function(x) {
-    return (1 - 2 * Math.atan(x / (100 * rate)) / Math.PI) / 2;
-  },
-  constant: function(x) {
-    return 0.3;
-  },
-  curve: function(x) {
-    return Math.pow(2, x / 100) - 0.8;
-  }
-};
-
-svgLine = d3.svg.line().x(function(d) {
-  return x(d.x);
-}).y(function(d) {
-  return y(d.y);
-});
 
 vis.append("g").data([graph(funcs.top)]).append("path").attr("class", "top line").attr("d", svgLine);
 
