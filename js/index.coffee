@@ -76,12 +76,12 @@
 
   #Setting up the scaling function for x
   x=d3.scale.linear()
-    .domain([-3,110])
+    .domain([0,100])
     .range([0, w])
 
   #Setting up the scaling function for y
   y=d3.scale.linear()
-    .domain([-0.1,1.1])
+    .domain([-0,1])
     .range([h, 0])
 
   #Function which draws a line.
@@ -96,15 +96,18 @@
   #
   ########
 
+  axis = d3.svg.axis()
 
-  #Draw the horizontal x axis
-  xRules = vis.append("g")
-    .attr("class", "axis")
-    .append("line")
-    .attr("x1", x(0))
-    .attr("x2", x(0))
-    .attr("y1", y(0))
-    .attr("y2", y(1))
+  vis.append("svg:g")
+    .attr("class","axis")
+    .attr("transform","translate(0,#{h}))")
+    .call(axis.scale(x).ticks(2))
+
+  vis.append("svg:g")
+    .attr("class","axis")
+    .attr("transform","translate(#{x(0)},#{y(0)}))")
+    .call(axis.scale(y).orient("right").ticks(2))
+
 
   #Draw the vertical y axis
   yRules = vis.append("g")

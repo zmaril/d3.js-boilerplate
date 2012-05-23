@@ -1,6 +1,6 @@
 
 (function() {
-  var display, domain, funcs, graph, h, p, rate, redrawLines, slider, svgLine, vis, w, x, xRules, y, yRules;
+  var axis, display, domain, funcs, graph, h, p, rate, redrawLines, slider, svgLine, vis, w, x, y, yRules;
   w = 482;
   h = 482;
   p = 20;
@@ -34,14 +34,16 @@
   });
   $("#main").append(slider, display);
   vis = d3.select('#main').append('svg').attr("width", w + p * 2).attr("height", h + p * 2).append('g').attr("transform", "translate(" + p + "," + p + ")");
-  x = d3.scale.linear().domain([-3, 110]).range([0, w]);
-  y = d3.scale.linear().domain([-0.1, 1.1]).range([h, 0]);
+  x = d3.scale.linear().domain([0, 100]).range([0, w]);
+  y = d3.scale.linear().domain([-0, 1]).range([h, 0]);
   svgLine = d3.svg.line().x(function(d) {
     return x(d.x);
   }).y(function(d) {
     return y(d.y);
   });
-  xRules = vis.append("g").attr("class", "axis").append("line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", y(0)).attr("y2", y(1));
+  axis = d3.svg.axis();
+  vis.append("svg:g").attr("class", "axis").attr("transform", "translate(0," + h + "))").call(axis.scale(x).ticks(2));
+  vis.append("svg:g").attr("class", "axis").attr("transform", "translate(" + (x(0)) + "," + (y(0)) + "))").call(axis.scale(y).orient("right").ticks(2));
   yRules = vis.append("g").attr("class", "axis").append("line").attr("x1", x(0)).attr("x2", x(_.max(domain))).attr("y1", y(0)).attr("y2", y(0));
   vis.append("foreignObject").attr("transform", "translate(" + (x(-7)) + "," + (y(0.45)) + "),rotate(-90)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large p_m(i)y} \\)");
   vis.append("foreignObject").attr("transform", "translate(" + (x(0.5)) + "," + (y(0.55)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large \\theta y} \\)");

@@ -9,9 +9,7 @@ body {
 }
 
 .axis {
-  stroke: #000;
-  stroke-width: 2px;
-  shape-rendering: crispEdges;
+
 }
 
 .line {
