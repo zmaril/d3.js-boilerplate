@@ -25,7 +25,7 @@ development time.
 ## Features
 
 * Based on [HTML5 boilerplate](http://github.com/h5bp/html5-boilerplate). 
-* Comes with d3, underscore, jquery-ui and MathJax already loaded in. 
+* Comes with [d3 plugins](https://github.com/d3/d3-plugins),[rickshaw](http://code.shutterstock.com/rickshaw/),[crossfilter](http://square.github.com/crossfilter/),[cubism](http://square.github.com/cubism/), [underscore](http://underscorejs.org/), [jquery-ui](http://jqueryui.com/) and [MathJax](http://www.mathjax.org/). 
 * MathJax allows you to use latex to create your labels (via
   foreignObjects). 
 * Includes useful datasets, such as polygons for the world-countries
