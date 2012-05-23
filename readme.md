@@ -25,11 +25,11 @@ development time.
 ## Features
 
 * Based on [HTML5 boilerplate](http://github.com/h5bp/html5-boilerplate). 
-* Comes with d3, underscore, jquery-ui and MathJax already loaded in. 
+* Comes with [d3 plugins](https://github.com/d3/d3-plugins),[rickshaw](http://code.shutterstock.com/rickshaw/),[crossfilter](http://square.github.com/crossfilter/),[cubism](http://square.github.com/cubism/), [underscore](http://underscorejs.org/), [jquery-ui](http://jqueryui.com/) and [MathJax](http://www.mathjax.org/). 
 * MathJax allows you to use latex to create your labels (via
   foreignObjects). 
 * Includes useful datasets, such as polygons for the world-countries
-  and United States. 
+  and United States, and timezones for countries across the world. 
 * rm is your friend. Show no mercy.
 
 ## Contributing
@@ -37,10 +37,12 @@ development time.
 Tralfamadore needs more pull requests! 
 
 ### Current TODOS
-* Find more useful datasets to include. Zip codes? Time zones? 
+* Find more useful datasets to include. Zip codes?
 * Try to scale MathJax down some. It's huge. Only the SVG components are used, so
   everything else can fall away. 
-* Create a better example for the index graph.
+* Make better examples. The current ones suck. See next idea. 
+* Create templates. Ideas: Basic.html, only includes d3. X.html only
+  includes d3 and X. Maximum.html includes everything. 
 
 ## License
 
@@ -51,6 +53,9 @@ Tralfamadore needs more pull requests!
 * Normalize.css: Public Domain
 * d3.js: [License](https://github.com/mbostock/d3/blob/master/LICENSE)
 * underscore: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
+* cubism: [License](https://github.com/square/cubism/blob/master/LICENSE)
+* crossfilter: [License](https://github.com/square/crossfilter/blob/master/LICENSE)
+* rickshaw: [License](https://github.com/shutterstock/rickshaw#license)
 * MathJax: Apache 2.0 License
 
 ### Everything else:
