@@ -1,8 +1,9 @@
 # d3.js boilerplate - basic template
 
-This is a basic template for using d3.js. See the master branch of
-this repository for more information for the template system and
-philosophy behind this project. 
+This is a basic template for using d3.js. See
+[the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate)
+for more information for the template system and philosophy behind
+this project.
 
 ## Types and purpose of files included 
 
@@ -37,7 +38,6 @@ philosophy behind this project.
 * Host - `heroku create my-ballin-document --stack cedar`
 * Commit - `git commit -am "Totes my goats"`
 * Push - `git push heroku master`
-
 
 ### Current TODOS
 * Make better examples. The current ones suck. See next idea. 
