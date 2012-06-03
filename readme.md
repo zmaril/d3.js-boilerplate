@@ -55,11 +55,7 @@ of time.
 Checkout each branch on github to see how to develop and deploy each
 specific branch.
 
-* basic - only has d3.js installed.
-* brush
-* geo-fisheye
-* globe-mouse
-* hex-heatmap
+* [basic](https://github.com/zmaril/d3.js-boilerplate/tree/basic) - only has d3.js installed.
 * jquery-ui - A simple example of how to use jquery-ui to interact
   with d3.js.
 * rickshaw - 
