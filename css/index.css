@@ -1,24 +1,10 @@
 body {
   font: 10px sans-serif;
 }
-
 #main {
-  padding: 40px;
-  left:20%;
-  width:482px;
+  left: 25%;
+  position: absolute;
 }
-
-.axis {
-
-}
-
-.line {
-  fill: none;
-  stroke: #000;
-  stroke-width: 2px;
-}
-
-
-path.constant{
-stroke-dasharray: 9, 5;
+#main #text {
+  padding-bottom: 10px;
 }
