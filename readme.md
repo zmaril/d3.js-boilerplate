@@ -44,10 +44,6 @@ Unless otherwise specified, each branch has the following files:
 
 * css/index.less
 
-### Data
-
-* A folder called data that holds onto a ton of useful information. 
-
 N.B. [Coffescript](http://coffeescript.org/),
 [{less}](http://lesscss.org/), and [Heroku](http://www.heroku.com/)
 use are encouraged to speed up development and deployment. Learning
@@ -94,16 +90,6 @@ specific branch.
 * Host - `heroku create my-ballin-document --stack cedar`
 * Commit - `git commit -am "Totes my goats"`
 * Push - `git push heroku master`
-
-## Features
-
-* Based on [HTML5 boilerplate](http://github.com/h5bp/html5-boilerplate). 
-* Comes with [d3 plugins](https://github.com/d3/d3-plugins),[rickshaw](http://code.shutterstock.com/rickshaw/),[crossfilter](http://square.github.com/crossfilter/),[cubism](http://square.github.com/cubism/), [underscore](http://underscorejs.org/), [jquery-ui](http://jqueryui.com/) and [MathJax](http://www.mathjax.org/). 
-* MathJax allows you to use latex to create your labels (via
-  foreignObjects). 
-* Includes useful datasets, such as polygons for the world-countries
-  and United States, and timezones for countries across the world. 
-* rm is your friend. Show no mercy.
 
 ## Contributing
 
