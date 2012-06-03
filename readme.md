@@ -1,7 +1,7 @@
 # d3.js boilerplate - basic template
 
 This is a basic template for using d3.js. See
-[the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate)
+[the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
 for more information for the template system and philosophy behind
 this project.
 
