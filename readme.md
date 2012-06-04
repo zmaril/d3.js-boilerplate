@@ -5,6 +5,8 @@ This is a basic template for using d3.js. See
 for more information for the template system and philosophy behind
 this project.
 
+Click [here for deployed example](http://d3bbasic.herokuapp.com/). 
+
 ## Types and purpose of files included 
 
 ### HTML
@@ -54,8 +56,7 @@ this project.
 
 Public domain. 
 
-### Parting thoughts
+### Parting thoughts from author
 
-If you [sent me](https://twitter.com/#!/ZackMaril) a
-tweet when you cloned this, I would be all warm and fuzzy for a few
-minutes. If you needed some d3.js work done yesterday, I know [a guy](https://www.odesk.com/users/~~80bea7ba2750c34b). 
+[Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
+[Contact me](zack@zacharymaril.com). 
