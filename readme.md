@@ -75,11 +75,16 @@ specific branch.
 
 Tralfamadore needs more pull requests! 
 
-### Current TODOS
+### Current Major TODOS
 * Try to scale MathJax down some. It's huge. Only the SVG components
-  are used, so everything else can fall away.
+  are used, so everything else can fall away. _This will be moved to
+  the MathJax branch once it gets made. But the files do slow down
+  cloning, and thus the point of the project, pretty hard most of the
+  time._
 * Add in more branches
 * Get a website set up to view all this all pretty like. Use [sandcastle](https://github.com/Khan/sandcastle).
+
+Check each branch for more specific items. 
 
 ## License
 
