@@ -85,3 +85,8 @@ Tralfamadore needs more pull requests!
 
 See each branch for licenses. Unless otherwise licensed, this code is
 released into the public domain as is, no warranty attached. 
+
+## Parting Thoughts
+
+[Zack Maril](@ZackMaril)- Need d3.js work done? Contact me at
+zack@zacharymaril.com. 
