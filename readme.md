@@ -42,14 +42,15 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 * Push - `git push heroku master`
 
 ### Current TODOS
-* Make better examples. The current ones suck. See next idea. 
+* Change example to something cool to attract more people to the
+  project.
 
 ## License
 
 ### Major components:
 
-* jQuery/jQuery-ui: MIT/GPL license
 * d3.js: [License](https://github.com/mbostock/d3/blob/master/LICENSE)
+* jQuery/jQuery-ui: MIT/GPL license
 * underscore: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
 
 ### Everything else:
@@ -59,4 +60,4 @@ Public domain.
 ### Parting thoughts from author
 
 [Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
-[Contact me](zack@zacharymaril.com). 
+Contact me at zack@zacharymaril.com or on [oDesk](https://www.odesk.com/users/~~80bea7ba2750c34b). 
