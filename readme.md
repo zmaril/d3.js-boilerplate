@@ -57,7 +57,8 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 
 Public domain. 
 
-### Parting thoughts from author
+
+## Parting Thoughts
 
 [Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
 Contact me at zack@zacharymaril.com or on [oDesk](https://www.odesk.com/users/~~80bea7ba2750c34b). 
