@@ -33,7 +33,7 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 
 ### Develop locally
 * Move `cd my-ballin-document`
-* Host `python -m SimpleHTTPServer`
+* Host `python -m SimpleHTTPServer` or [pyserve &](https://twitter.com/ZackMaril/status/165258473167261698)
 * Navigate to localhost:8000
 
 ### Deploy Globally 
