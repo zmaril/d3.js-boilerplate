@@ -30,7 +30,8 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
 * Checkout - `git checkout basic`
-* Clean up - `rm .git` (This gets rid of a bunch of files you won't need.) 
+* Clean up - `rm .git` (This gets rid of a bunch of files you won't
+  need. Think of it as wiping clean all of the branches of this repo.) 
 * Restart - `git init`
 
 ### Develop locally
