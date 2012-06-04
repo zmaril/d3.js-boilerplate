@@ -29,7 +29,9 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 ### Get the right template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
-* Checkout - 'git checkout basic'
+* Checkout - `git checkout basic`
+* Clean up - `rm .git` (This gets rid of a bunch of files you won't need.) 
+* Restart - `git init`
 
 ### Develop locally
 * Move `cd my-ballin-document`
