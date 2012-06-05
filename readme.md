@@ -6,12 +6,6 @@ providing a full featured template and encouraging the use of useful
 tools, this project aims to help developers passively and actively cut
 down on development time.
 
-# Under active development.
-
-The framework for the branching system is still being
-implemented. Large changes to infrastructure will be happening for a
-while. So, hold onto your horses. 
-
 ## How it works
 
 d3.js boilerplate is a system that changes as your data
@@ -20,11 +14,8 @@ that best matches your needs.
 
 Examples:
 
-If you just need a page with d3.js loaded in, you just checkout the
-"basic" branch.
-
-If you need one with rickshaw installed, you checkout the "rickshaw"
-branch.
+jquery-ui and d3.js together on a single page? `git checkout jquery-ui`
+Only need d3.js? `git checkout basic`
 
 ## General usage
 
@@ -57,19 +48,8 @@ Checkout each branch on github to see how to develop and deploy each
 specific branch.
 
 * [basic](https://github.com/zmaril/d3.js-boilerplate/tree/basic) - only has d3.js installed.
-* jquery-ui - A simple example of how to use jquery-ui to interact
+* [jquery-ui](https://github.com/zmaril/d3.js-boilerplate/tree/jquery-ui) - A simple example of how to use jquery-ui to interact
   with d3.js.
-* rickshaw - 
-* cubism -
-* MathJax - Interactive graphics with Latex annotations.
-* crossfilter - How to throw around millions of data points. 
-* backbone - Simple example showing how to integrate d3 and backbone
-  to create linkable graphics.
-* graphene - Customizing graphene. 
-* dashboard - Single page website layout with bootstrap. 
-* investigator - A bootstrap backed website that builds on rickshaw,
-  jquery-ui, underscore, and backbone to provide a jumping off point
-  for designing your own data investigator.
 
 ## Contributing
 
@@ -81,7 +61,14 @@ Tralfamadore needs more pull requests!
   the MathJax branch once it gets made. But the files do slow down
   cloning, and thus the point of the project, pretty hard most of the
   time._
-* Add in more branches
+* Add in more branches. Ideas: rickshaw, cubism, MathJax - Interactive
+  graphics with Latex annotations, crossfilter - How to throw around
+  millions of data points, backbone - Simple example showing how to
+  integrate d3 and backbone to create linkable graphics, graphene -
+  Customizing graphene, dashboard - Single page website layout with
+  bootstrap, investigator - A bootstrap backed website that builds on
+  rickshaw, jquery-ui, underscore, and backbone to provide a jumping
+  off point for designing your own data investigator.
 * Get a website set up to view all this all pretty like. Use [sandcastle](https://github.com/Khan/sandcastle).
 
 Check each branch for more specific items. 
