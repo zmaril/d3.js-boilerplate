@@ -6,6 +6,9 @@ providing a full featured template and encouraging the use of useful
 tools, this project aims to help developers passively and actively cut
 down on development time.
 
+This is the big productive brother of
+[Visulization Data](https://github.com/zmaril/Visualization-Data).
+
 ## How it works
 
 d3.js boilerplate is a system that changes as your data
