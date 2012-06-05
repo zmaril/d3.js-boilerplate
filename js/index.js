@@ -1,75 +1,51 @@
+var delta, graphic, ratio, size;
 
-(function() {
-  var axis, display, domain, funcs, graph, h, p, rate, redrawLines, slider, svgLine, vis, w, x, y, yRules;
-  w = 482;
-  h = 482;
-  p = 20;
-  domain = _.range(100);
-  rate = 1;
-  funcs = {
-    top: function(x) {
-      return (1 + 2 * Math.atan(x / rate) / Math.PI) / 2;
-    },
-    bottom: function(x) {
-      return (1 - 2 * Math.atan(x / (100 * rate)) / Math.PI) / 2;
-    },
-    constant: function(x) {
-      return 0.3;
-    },
-    curve: function(x) {
-      return Math.pow(2, x / 100) - 0.8;
-    }
-  };
-  display = $("<div>").attr("id", "rate-value").text("Rate Value: " + rate);
-  slider = $("<div>").attr("id", "rate-slider").slider({
-    value: rate,
+graphic = new Object;
+
+ratio = 0.5;
+
+size = 0;
+
+delta = 10;
+
+graphic.create = function() {
+  var height, width;
+  width = $(document).width() / 2;
+  height = $(document).height() * .85;
+  size = d3.min([width, height]);
+  graphic.svg = d3.select("#graphic").append("svg").attr("width", size).attr("height", size);
+  graphic.g = graphic.svg.append("g").attr("transform", "translate(" + (size / 2 * ratio) + "," + (size / 2 * ratio) + ")");
+  graphic.rect = graphic.g.append("rect").attr("height", size * ratio).attr("width", size * ratio).attr("fill", "black");
+  graphic.slider = $("#slider").slider({
+    value: ratio,
     min: 0.01,
-    max: 10,
+    max: 1,
     step: 0.01,
     slide: function(event, ui) {
-      rate = ui.value;
-      $("#rate-value").text("Rate Value: " + rate);
-      return redrawLines();
+      ratio = ui.value;
+      return graphic.update();
     }
   });
-  $("#main").append(slider, display);
-  vis = d3.select('#main').append('svg').attr("width", w + p * 2).attr("height", h + p * 2).append('g').attr("transform", "translate(" + p + "," + p + ")");
-  x = d3.scale.linear().domain([0, 100]).range([0, w]);
-  y = d3.scale.linear().domain([-0, 1]).range([h, 0]);
-  svgLine = d3.svg.line().x(function(d) {
-    return x(d.x);
-  }).y(function(d) {
-    return y(d.y);
+  return $("#main").append(graphic.slider);
+};
+
+graphic.update = function() {
+  var phi, s;
+  s = size * ratio;
+  phi = ratio * Math.PI * 2 * 100;
+  graphic.rect.transition(delta).attr("height", s).attr("width", s);
+  return graphic.g.transition(delta).attr("transform", "translate(" + (s / 2) + "," + (s / 2) + "),rotate(" + phi + ")");
+};
+
+graphic.destroy = function() {
+  graphic.svg.remove();
+  return delete graphic.svg;
+};
+
+$(document).ready(function() {
+  graphic.create();
+  return $(window).resize(function() {
+    graphic.destroy();
+    return graphic.create();
   });
-  axis = d3.svg.axis();
-  vis.append("svg:g").attr("class", "axis").attr("transform", "translate(0," + h + "))").call(axis.scale(x).ticks(2));
-  vis.append("svg:g").attr("class", "axis").attr("transform", "translate(" + (x(0)) + "," + (y(0)) + "))").call(axis.scale(y).orient("right").ticks(2));
-  yRules = vis.append("g").attr("class", "axis").append("line").attr("x1", x(0)).attr("x2", x(_.max(domain))).attr("y1", y(0)).attr("y2", y(0));
-  vis.append("foreignObject").attr("transform", "translate(" + (x(-7)) + "," + (y(0.45)) + "),rotate(-90)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large p_m(i)y} \\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(0.5)) + "," + (y(0.55)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large \\theta y} \\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(50)) + "," + (y(-0.01)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large i} \\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(-4)) + "," + (y(1.03)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\(1\\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(-4)) + "," + (y(0.04)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\(0\\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(100)) + "," + (y(0.34)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\( {\\Large U } \\)");
-  vis.append("foreignObject").attr("transform", "translate(" + (x(80)) + "," + (y(1.05)) + "),rotate(0)").attr("height", 100).attr("width", 100).append("xhtml:body").html("\\(C(i)\\)");
-  graph = function(f) {
-    var all;
-    all = _.map(domain, function(x) {
-      return {
-        x: x,
-        y: f(x)
-      };
-    });
-    return _.filter(all, function(pair) {
-      return pair.y < 1;
-    });
-  };
-  vis.append("g").data([graph(funcs.top)]).append("path").attr("class", "top line").attr("d", svgLine);
-  vis.append("g").data([graph(funcs.bottom)]).append("path").attr("class", "bottom line").attr("d", svgLine);
-  vis.append("g").data([graph(funcs.constant)]).append("path").attr("class", "constant line").attr("d", svgLine);
-  vis.append("g").data([graph(funcs.curve)]).append("path").attr("class", "curve line").attr("d", svgLine);
-  return redrawLines = function() {
-    vis.selectAll(".top").data([graph(funcs.top)]).transition().duration(20).attr("d", svgLine);
-    return vis.selectAll(".bottom").data([graph(funcs.bottom)]).transition().duration(20).attr("d", svgLine);
-  };
-})();
+});

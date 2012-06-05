@@ -1,20 +1,43 @@
-# d3.js Boilerplate
+# d3.js boilerplate - jquery-ui template
 
-d3.js Boilerplate is a template designed to help you build a
-sophisticated data driven document as fast as possible. By providing a
-full featured template and encouraging the use of coffeescript and
-various other javascript libraries, this project hopes to cut down on
-development time. 
+This is a template for using d3.js along with jquery-ui. See
+[the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
+for more information for the template system and philosophy behind
+this project.
+
+Click [here for deployed example](http://d3bbasic.herokuapp.com/). 
+
+## Types and purpose of files included 
+
+### HTML
+
+* index.html - This is what your webpage will be serving. 
+
+### Coffeescript/Javascript
+
+* js/index.coffee - The javascript file that tells d3.js what to do
+* js/vendor/d3.v2.min.js - Minimized d3.js file. 
+* js/vendor/jquery.min.js - Everybody needs a little jQuery
+* js/vendor/jquery-ui-1.8.18.custom.min.js - jQuery UI to the rescue. 
+* js/vendor/underscore.min.js - Underscore is small and useful. 
+
+### less/CSS
+
+* css/index.less - Simple less file
 
 ## Quick start
 
-### Get the template
+### Get the right template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
+* Checkout - `git checkout basic`
+* Clean up - `rm .git` (This gets rid of a bunch of files you won't
+  need. Think of it as wiping clean all of the branches of this repo.) 
+* Restart - `git init`
 
 ### Develop locally
 * Move `cd my-ballin-document`
-* Host `python -m SimpleHTTPServer`
+* Host `python -m SimpleHTTPServer` or [pyserve &](https://twitter.com/ZackMaril/status/165258473167261698)
 * Navigate to localhost:8000
 
 ### Deploy Globally 
@@ -22,46 +45,23 @@ development time.
 * Commit - `git commit -am "Totes my goats"`
 * Push - `git push heroku master`
 
-## Features
-
-* Based on [HTML5 boilerplate](http://github.com/h5bp/html5-boilerplate). 
-* Comes with [d3 plugins](https://github.com/d3/d3-plugins),[rickshaw](http://code.shutterstock.com/rickshaw/),[crossfilter](http://square.github.com/crossfilter/),[cubism](http://square.github.com/cubism/), [underscore](http://underscorejs.org/), [jquery-ui](http://jqueryui.com/) and [MathJax](http://www.mathjax.org/). 
-* MathJax allows you to use latex to create your labels (via
-  foreignObjects). 
-* Includes useful datasets, such as polygons for the world-countries
-  and United States, and timezones for countries across the world. 
-* rm is your friend. Show no mercy.
-
-## Contributing
-
-Tralfamadore needs more pull requests! 
-
 ### Current TODOS
-* Find more useful datasets to include. Zip codes?
-* Try to scale MathJax down some. It's huge. Only the SVG components are used, so
-  everything else can fall away. 
-* Make better examples. The current ones suck. See next idea. 
-* Create templates. Ideas: Basic.html, only includes d3. X.html only
-  includes d3 and X. Maximum.html includes everything. 
+* Change example to something cool to attract more people to the
+  project.
 
 ## License
 
 ### Major components:
 
-* jQuery/jQuery-ui: MIT/GPL license
-* Modernizr: MIT/BSD license
-* Normalize.css: Public Domain
 * d3.js: [License](https://github.com/mbostock/d3/blob/master/LICENSE)
+* jQuery/jQuery-ui: MIT/GPL license
 * underscore: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
-* cubism: [License](https://github.com/square/cubism/blob/master/LICENSE)
-* crossfilter: [License](https://github.com/square/crossfilter/blob/master/LICENSE)
-* rickshaw: [License](https://github.com/shutterstock/rickshaw#license)
-* MathJax: Apache 2.0 License
 
 ### Everything else:
 
 Public domain. 
 
-If you [sent me](https://twitter.com/#!/ZackMaril) a
-tweet when you cloned this, I would be all warm and fuzzy for a few
-minutes. If you needed some d3.js work done yesterday, I know [a guy](https://www.odesk.com/users/~~80bea7ba2750c34b). 
+## Parting Thoughts
+
+[Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
+Contact me at zack@zacharymaril.com or on [oDesk](https://www.odesk.com/users/~~80bea7ba2750c34b). 
