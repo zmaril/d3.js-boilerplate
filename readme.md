@@ -5,7 +5,7 @@ This is a template for using d3.js along with jquery-ui. See
 for more information for the template system and philosophy behind
 this project.
 
-Click [here for deployed example](http://d3bbasic.herokuapp.com/). 
+Click [here for deployed example](http://d3bjquery-ui.herokuapp.com/). 
 
 ## Types and purpose of files included 
 
@@ -24,6 +24,7 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 ### less/CSS
 
 * css/index.less - Simple less file
+* css/smoothness - Files needed for jQuery-ui
 
 ## Quick start
 
@@ -60,8 +61,3 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 ### Everything else:
 
 Public domain. 
-
-## Parting Thoughts
-
-[Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
-Contact me at zack@zacharymaril.com or on [oDesk](https://www.odesk.com/users/~~80bea7ba2750c34b). 
