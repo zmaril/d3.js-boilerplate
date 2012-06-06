@@ -6,7 +6,7 @@ with sliders). See [the master branch of this repository](https://github.com/zma
 for more information for the template system and philosophy behind
 this project.
 
-Click [here for deployed example](http://d3bjquery-ui.herokuapp.com/). 
+Click [here for deployed example](http://d3bbackbone.herokuapp.com/). 
 
 ## Types and purpose of files included 
 
@@ -21,18 +21,19 @@ Click [here for deployed example](http://d3bjquery-ui.herokuapp.com/).
 * js/vendor/jquery.min.js - Everybody needs a little jQuery
 * js/vendor/jquery-ui-1.8.18.custom.min.js - jQuery UI to the rescue. 
 * js/vendor/underscore.min.js - Underscore is small and useful. 
+* js/vendor/backbone.min.js - Saving state with backbone. 
 
 ### less/CSS
 
 * css/index.less - Simple less file
-* css/smoothness - Files needed for jQuery-ui
+* css/smoothness - Files needed for displaying jQuery-ui 
 
 ## Quick start
 
 ### Get the right template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
-* Checkout - `git checkout basic`
+* Checkout - `git checkout backbone`
 * Clean up - `rm .git` (This gets rid of a bunch of files you won't
   need. Think of it as wiping clean all of the branches of this repo.) 
 * Restart - `git init`
@@ -58,6 +59,7 @@ Click [here for deployed example](http://d3bjquery-ui.herokuapp.com/).
 * d3.js: [License](https://github.com/mbostock/d3/blob/master/LICENSE)
 * jQuery/jQuery-ui: MIT/GPL license
 * underscore: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
+* backbone: [License](https://github.com/documentcloud/backbone/blob/master/LICENSE)
 
 ### Everything else:
 
