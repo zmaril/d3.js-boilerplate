@@ -53,6 +53,12 @@ specific branch.
 * [basic](https://github.com/zmaril/d3.js-boilerplate/tree/basic) - only has d3.js installed.
 * [jquery-ui](https://github.com/zmaril/d3.js-boilerplate/tree/jquery-ui) - A simple example of how to use jquery-ui to interact
   with d3.js.
+* [backbone](https://github.com/zmaril/d3.js-boilerplate/tree/backbone)
+  - Deeplinking d3.js with backbone.
+* [bootstrap](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap)
+  - Pretty pages!
+* [dashboard](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap)
+  - Creating a dashboard with d3.js, bootstrap, and backbone.
 
 ## Contributing
 
@@ -66,13 +72,11 @@ Tralfamadore needs more pull requests!
   time._
 * Add in more branches. Ideas: rickshaw, cubism, MathJax - Interactive
   graphics with Latex annotations, crossfilter - How to throw around
-  millions of data points, backbone - Simple example showing how to
-  integrate d3 and backbone to create linkable graphics, graphene -
-  Customizing graphene, dashboard - Single page website layout with
-  bootstrap, investigator - A bootstrap backed website that builds on
-  rickshaw, jquery-ui, underscore, and backbone to provide a jumping
-  off point for designing your own data investigator.
-* Get a website set up to view all this all pretty like. Use [sandcastle](https://github.com/Khan/sandcastle).
+  millions of data points, graphene - Customizing graphene,
+  investigator - A bootstrap backed website that builds on rickshaw,
+  jquery-ui, underscore, and backbone to provide a jumping off point
+  for designing your own data investigator.
+* Get a better website set up to view all this all pretty like. Use [sandcastle](https://github.com/Khan/sandcastle).
 
 Check each branch for more specific items. 
 
