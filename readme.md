@@ -53,12 +53,9 @@ specific branch.
 * [basic](https://github.com/zmaril/d3.js-boilerplate/tree/basic) - only has d3.js installed.
 * [jquery-ui](https://github.com/zmaril/d3.js-boilerplate/tree/jquery-ui) - A simple example of how to use jquery-ui to interact
   with d3.js.
-* [backbone](https://github.com/zmaril/d3.js-boilerplate/tree/backbone)
-  - Deeplinking d3.js with backbone.
-* [bootstrap](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap)
-  - Pretty pages!
-* [dashboard](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap)
-  - Creating a dashboard with d3.js, bootstrap, and backbone.
+* [backbone](https://github.com/zmaril/d3.js-boilerplate/tree/backbone)- Deeplinking d3.js with backbone.
+* [bootstrap](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap) - Pretty pages!
+* [dashboard](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap)  - Creating a dashboard with d3.js, bootstrap, and backbone.
 
 ## Contributing
 
