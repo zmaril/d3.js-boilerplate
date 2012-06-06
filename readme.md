@@ -1,7 +1,8 @@
-# d3.js boilerplate - jquery-ui template
+# d3.js boilerplate - backbone template
 
-This is a template for using d3.js along with jquery-ui. See
-[the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
+This is a template for using d3.js along with backbone. It is an
+extension of the [jquery-ui branch](https://github.com/zmaril/d3.js-boilerplate/tree/jquery-ui) (people understand things better
+with sliders). See [the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
 for more information for the template system and philosophy behind
 this project.
 

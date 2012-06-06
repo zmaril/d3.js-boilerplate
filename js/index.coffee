@@ -2,6 +2,7 @@ graphic = new Object
 ratio = 0.5
 size = 0
 delta = 10
+route = null
 
 graphic.create = ()->
   width = $(document).width()/2
@@ -26,10 +27,7 @@ graphic.create = ()->
       min : 0.01
       max : 1
       step: 0.01
-      slide : (event,ui)->
-        ratio = ui.value
-        graphic.update()
-    )
+      slide : (event,ui)-> route.navigate("//#{ui.value}",{trigger: true, replace: true}))
 
   $("#main").append(graphic.slider)
 
@@ -45,13 +43,32 @@ graphic.update = ()->
     .attr("transform",
       "translate(#{s/2},#{s/2}),rotate(#{phi})")
 
+    graphic.slider.slider("value",ratio)
+
 graphic.destroy = ()->
   graphic.svg.remove()
   delete graphic.svg
 
+HashBangs = Backbone.Router.extend({
+    "routes":
+      "": "default"
+      ":ratio" : "ratio"
+
+    "default": ()->
+
+    "ratio": (r)->
+      ratio = r
+      graphic.update()
+  })
+
+start_backbone = ()->
+  route = new HashBangs()
+  Backbone.history.start()
+
+#  Backbone.history.start()
 $(document).ready ()->
   graphic.create()
-
+  start_backbone()
   $(window).resize ()->
     graphic.destroy()
     graphic.create()

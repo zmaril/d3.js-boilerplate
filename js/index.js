@@ -1,4 +1,4 @@
-var delta, graphic, ratio, size;
+var HashBangs, delta, graphic, ratio, route, size, start_backbone;
 
 graphic = new Object;
 
@@ -7,6 +7,8 @@ ratio = 0.5;
 size = 0;
 
 delta = 10;
+
+route = null;
 
 graphic.create = function() {
   var height, width;
@@ -22,8 +24,10 @@ graphic.create = function() {
     max: 1,
     step: 0.01,
     slide: function(event, ui) {
-      ratio = ui.value;
-      return graphic.update();
+      return route.navigate("//" + ui.value, {
+        trigger: true,
+        replace: true
+      });
     }
   });
   return $("#main").append(graphic.slider);
@@ -34,7 +38,8 @@ graphic.update = function() {
   s = size * ratio;
   phi = ratio * Math.PI * 2 * 100;
   graphic.rect.transition(delta).attr("height", s).attr("width", s);
-  return graphic.g.transition(delta).attr("transform", "translate(" + (s / 2) + "," + (s / 2) + "),rotate(" + phi + ")");
+  graphic.g.transition(delta).attr("transform", "translate(" + (s / 2) + "," + (s / 2) + "),rotate(" + phi + ")");
+  return graphic.slider.slider("value", ratio);
 };
 
 graphic.destroy = function() {
@@ -42,8 +47,26 @@ graphic.destroy = function() {
   return delete graphic.svg;
 };
 
+HashBangs = Backbone.Router.extend({
+  "routes": {
+    "": "default",
+    ":ratio": "ratio"
+  },
+  "default": function() {},
+  "ratio": function(r) {
+    ratio = r;
+    return graphic.update();
+  }
+});
+
+start_backbone = function() {
+  route = new HashBangs();
+  return Backbone.history.start();
+};
+
 $(document).ready(function() {
   graphic.create();
+  start_backbone();
   return $(window).resize(function() {
     graphic.destroy();
     return graphic.create();
