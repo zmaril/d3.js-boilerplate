@@ -26,13 +26,12 @@ graphic.create = ()->
       min : 1
       max : size
       step: 0.01
-      slide : (event,ui)-> route.navigate("//#{ui.value}",{trigger: true, replace: true}))
+      slide : (event,ui)-> route.navigate("//#{ui.value}",{trigger: true}))
 
   $("#main").append(graphic.slider)
 
 graphic.update = ()->
-  console.log radius
-  graphic.circ.attr("r",radius)
+  graphic.circ.transition(100).attr("r",radius)
   graphic.slider.slider("value",radius)
 
 graphic.destroy = ()->

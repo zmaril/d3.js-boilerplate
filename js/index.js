@@ -25,8 +25,7 @@ graphic.create = function() {
     step: 0.01,
     slide: function(event, ui) {
       return route.navigate("//" + ui.value, {
-        trigger: true,
-        replace: true
+        trigger: true
       });
     }
   });
@@ -34,8 +33,7 @@ graphic.create = function() {
 };
 
 graphic.update = function() {
-  console.log(radius);
-  graphic.circ.attr("r", radius);
+  graphic.circ.transition(100).attr("r", radius);
   return graphic.slider.slider("value", radius);
 };
 
