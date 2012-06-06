@@ -1,11 +1,12 @@
-# d3.js boilerplate - bootstrap template
+# d3.js boilerplate - dashboard template
 
-This is a template for using d3.js along with bootstrap. See
+This is a template for making a dashboard using d3.js along with
+bootstrap, jquery-ui, and backbone. See
 [the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
 for more information for the template system and philosophy behind
 this project.
 
-Click [here for deployed example](http://d3bbootstrap.herokuapp.com/). 
+Click [here for deployed example](http://d3bdashboard.herokuapp.com/). 
 
 ## Types and purpose of files included 
 
@@ -19,19 +20,23 @@ Click [here for deployed example](http://d3bbootstrap.herokuapp.com/).
 * js/vendor/d3.v2.min.js - Minimized d3.js file. 
 * js/vendor/jquery.min.js - Everybody needs a little jQuery
 * js/vendor/bootstrap.min.js - jQuery plugins
+* js/vendor/backbone.min.js - Manages url states
+* js/vendor/jquery-ui[version].min.js - jQuery UI
 * js/vendor/underscore.min.js - Underscore is small and useful. 
 
 ### less/CSS
 
 * css/index.less - TODO: make this file
 * css/bootstrap.less - bootstrap styling
+* css/smoothness - Files need to render jquery UI
+
 
 ## Quick start
 
 ### Get the right template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
-* Checkout - `git checkout bootstrap`
+* Checkout - `git checkout dashboard`
 * Clean up - `rm .git` (This gets rid of a bunch of files you won't
   need. Think of it as wiping clean all of the branches of this repo.) 
 * Restart - `git init`
@@ -59,6 +64,8 @@ Click [here for deployed example](http://d3bbootstrap.herokuapp.com/).
 * underscore:
   [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
 * bootstrap: Apache license
+* backbone:
+  [License](https://github.com/documentcloud/backbone/blob/master/LICENSE)
 
 ### Everything else:
 
