@@ -58,7 +58,7 @@ Click [here for deployed example](http://d3bbootstrap.herokuapp.com/).
 * jQuery/jQuery-ui: MIT/GPL license
 * underscore:
   [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
-* bootstrap: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
+* bootstrap: Apache license
 
 ### Everything else:
 
