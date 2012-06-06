@@ -1,8 +1,8 @@
-var HashBangs, delta, graphic, ratio, route, size, start_backbone;
+var HashBangs, delta, graphic, radius, route, size, start_backbone;
 
 graphic = new Object;
 
-ratio = 0.5;
+radius = 10;
 
 size = 0;
 
@@ -16,12 +16,12 @@ graphic.create = function() {
   height = $(document).height() * .85;
   size = d3.min([width, height]);
   graphic.svg = d3.select("#graphic").append("svg").attr("width", size).attr("height", size);
-  graphic.g = graphic.svg.append("g").attr("transform", "translate(" + (size / 2 * ratio) + "," + (size / 2 * ratio) + ")");
-  graphic.rect = graphic.g.append("rect").attr("height", size * ratio).attr("width", size * ratio).attr("fill", "black");
+  graphic.g = graphic.svg.append("g").attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
+  graphic.circ = graphic.g.append("circle").attr("fill", "black").attr("r", radius);
   graphic.slider = $("#slider").slider({
-    value: ratio,
-    min: 0.01,
-    max: 1,
+    value: radius,
+    min: 1,
+    max: size,
     step: 0.01,
     slide: function(event, ui) {
       return route.navigate("//" + ui.value, {
@@ -34,12 +34,9 @@ graphic.create = function() {
 };
 
 graphic.update = function() {
-  var phi, s;
-  s = size * ratio;
-  phi = ratio * Math.PI * 2 * 100;
-  graphic.rect.transition(delta).attr("height", s).attr("width", s);
-  graphic.g.transition(delta).attr("transform", "translate(" + (s / 2) + "," + (s / 2) + "),rotate(" + phi + ")");
-  return graphic.slider.slider("value", ratio);
+  console.log(radius);
+  graphic.circ.attr("r", radius);
+  return graphic.slider.slider("value", radius);
 };
 
 graphic.destroy = function() {
@@ -50,11 +47,11 @@ graphic.destroy = function() {
 HashBangs = Backbone.Router.extend({
   "routes": {
     "": "default",
-    ":ratio": "ratio"
+    ":radius": "radius"
   },
   "default": function() {},
-  "ratio": function(r) {
-    ratio = r;
+  "radius": function(r) {
+    radius = r;
     return graphic.update();
   }
 });

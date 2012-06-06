@@ -1,5 +1,5 @@
 graphic = new Object
-ratio = 0.5
+radius = 10
 size = 0
 delta = 10
 route = null
@@ -15,35 +15,25 @@ graphic.create = ()->
       .attr("height",size)
 
   graphic.g = graphic.svg.append("g")
-    .attr("transform","translate(#{size/2*ratio},#{size/2*ratio})")
+    .attr("transform","translate(#{size/2},#{size/2})")
 
-  graphic.rect = graphic.g.append("rect")
-    .attr("height",size*ratio)
-    .attr("width",size*ratio)
+  graphic.circ = graphic.g.append("circle")
     .attr("fill","black")
+    .attr("r",radius)
 
   graphic.slider = $("#slider").slider(
-      value : ratio
-      min : 0.01
-      max : 1
+      value : radius
+      min : 1
+      max : size
       step: 0.01
       slide : (event,ui)-> route.navigate("//#{ui.value}",{trigger: true, replace: true}))
 
   $("#main").append(graphic.slider)
 
 graphic.update = ()->
-    s = size*ratio
-    phi = ratio*Math.PI*2*100
-
-    graphic.rect.transition(delta)
-      .attr("height",s)
-      .attr("width",s)
-
-    graphic.g.transition(delta)
-    .attr("transform",
-      "translate(#{s/2},#{s/2}),rotate(#{phi})")
-
-    graphic.slider.slider("value",ratio)
+  console.log radius
+  graphic.circ.attr("r",radius)
+  graphic.slider.slider("value",radius)
 
 graphic.destroy = ()->
   graphic.svg.remove()
@@ -52,12 +42,13 @@ graphic.destroy = ()->
 HashBangs = Backbone.Router.extend({
     "routes":
       "": "default"
-      ":ratio" : "ratio"
+      ":radius" : "radius"
 
     "default": ()->
 
-    "ratio": (r)->
-      ratio = r
+    "radius": (r)->
+
+      radius = r
       graphic.update()
   })
 
