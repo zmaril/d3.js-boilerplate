@@ -1,11 +1,11 @@
-# d3.js boilerplate - basic template
+# d3.js boilerplate - bootstrap template
 
-This is a basic template for using d3.js. See
+This is a template for using d3.js along with bootstrap. See
 [the master branch of this repository](https://github.com/zmaril/d3.js-boilerplate#how-it-works)
 for more information for the template system and philosophy behind
 this project.
 
-Click [here for deployed example](http://d3bbasic.herokuapp.com/). 
+Click [here for deployed example](http://d3bbootstrap.herokuapp.com/). 
 
 ## Types and purpose of files included 
 
@@ -18,18 +18,20 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 * js/index.coffee - The javascript file that tells d3.js what to do
 * js/vendor/d3.v2.min.js - Minimized d3.js file. 
 * js/vendor/jquery.min.js - Everybody needs a little jQuery
+* js/vendor/bootstrap.min.js - jQuery plugins
 * js/vendor/underscore.min.js - Underscore is small and useful. 
 
 ### less/CSS
 
 * css/index.less - TODO: make this file
+* css/bootstrap.less - bootstrap styling
 
 ## Quick start
 
 ### Get the right template
 * Clone - `git clone git@github.com:zmaril/d3.js-boilerplate.git`
 * Rename - `mv d3.js-boilerplate my-ballin-document`
-* Checkout - `git checkout basic`
+* Checkout - `git checkout bootstrap`
 * Clean up - `rm .git` (This gets rid of a bunch of files you won't
   need. Think of it as wiping clean all of the branches of this repo.) 
 * Restart - `git init`
@@ -54,7 +56,9 @@ Click [here for deployed example](http://d3bbasic.herokuapp.com/).
 
 * d3.js: [License](https://github.com/mbostock/d3/blob/master/LICENSE)
 * jQuery/jQuery-ui: MIT/GPL license
-* underscore: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
+* underscore:
+  [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
+* bootstrap: [License](https://github.com/documentcloud/underscore/blob/master/LICENSE)
 
 ### Everything else:
 
