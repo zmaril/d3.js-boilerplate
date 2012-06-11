@@ -55,7 +55,7 @@ specific branch.
   with d3.js.
 * [backbone](https://github.com/zmaril/d3.js-boilerplate/tree/backbone)- Deeplinking d3.js with backbone.
 * [bootstrap](https://github.com/zmaril/d3.js-boilerplate/tree/bootstrap) - Pretty pages!
-* [dashboard](https://github.com/zmaril/d3.js-boilerplate/tree/backbone)  - Creating a dashboard with d3.js, bootstrap, and backbone.
+* [dashboard](https://github.com/zmaril/d3.js-boilerplate/tree/dashboard)  - Creating a dashboard with d3.js, bootstrap, and backbone.
 
 ## Contributing
 
