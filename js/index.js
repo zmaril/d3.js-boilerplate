@@ -1,68 +1,53 @@
-var HashBangs, delta, graphic, radius, route, size, start_backbone;
+var XY, XYList, XYView, XYs, app;
 
-graphic = new Object;
-
-radius = 10;
-
-size = 0;
-
-delta = 10;
-
-route = null;
-
-graphic.create = function() {
-  var height, width;
-  width = $(document).width() / 2;
-  height = $(document).height() * .85;
-  size = d3.min([width, height]);
-  graphic.svg = d3.select("#graphic").append("svg").attr("width", size).attr("height", size);
-  graphic.g = graphic.svg.append("g").attr("transform", "translate(" + (size / 2) + "," + (size / 2) + ")");
-  graphic.circ = graphic.g.append("circle").attr("fill", "black").attr("r", radius);
-  return graphic.slider = $("#slider").slider({
-    value: radius,
-    min: 1,
-    max: size,
-    step: 0.01,
-    slide: function(event, ui) {
-      return route.navigate("//" + ui.value, {
-        trigger: true
+XY = Backbone.Model.extend({
+  defaults: {
+    title: "Empty XY",
+    x: 1,
+    y: 1
+  },
+  initialize: function() {
+    if (!this.get("title")) {
+      return this.set({
+        "title": this.x + this.y
       });
     }
-  });
-};
-
-graphic.update = function() {
-  graphic.circ.transition(100).attr("r", radius);
-  return graphic.slider.slider("value", radius);
-};
-
-graphic.destroy = function() {
-  graphic.svg.remove();
-  return delete graphic.svg;
-};
-
-HashBangs = Backbone.Router.extend({
-  "routes": {
-    "": "default",
-    ":radius": "radius"
-  },
-  "default": function() {},
-  "radius": function(r) {
-    radius = r;
-    return graphic.update();
   }
 });
 
-start_backbone = function() {
-  route = new HashBangs();
-  return Backbone.history.start();
-};
-
-$(document).ready(function() {
-  graphic.create();
-  start_backbone();
-  return $(window).resize(function() {
-    graphic.destroy();
-    return graphic.create();
-  });
+XYList = Backbone.Collection.extend({
+  model: XY,
+  url: "/data"
 });
+
+XYs = new XYList;
+
+XYView = Backbone.View.extend({
+  el: $("#graphic"),
+  initialize: function() {
+    var view, width;
+    XYs.bind("add", this.update, this);
+    XYs.bind("all", this.update, this);
+    width = this.$el.parent().width();
+    this.svg = d3.select(this.el).append("svg").attr("height", width).attr("width", width);
+    this.g = this.svg.append("g");
+    this.x = d3.scale.linear().domain([0, Math.PI * 2]).range([0, width]);
+    this.y = d3.scale.linear().domain([-1, 1]).range([width / 4, width * 3 / 4]);
+    view = this;
+    this.line = d3.svg.line().x(function(d) {
+      return view.x(d.attributes.x);
+    }).y(function(d) {
+      return view.y(d.attributes.y);
+    }).interpolate("cardinal");
+    return setInterval(XYs.fetch.bind(XYs), 100);
+  },
+  update: function() {
+    var path, view;
+    view = this;
+    path = this.g.selectAll("path").data([XYs.models]);
+    path.enter().append("path");
+    return path.transition(1000).attr("d", this.line);
+  }
+});
+
+app = new XYView;

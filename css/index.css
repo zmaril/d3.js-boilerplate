@@ -8,3 +8,9 @@ body {
 #main #text {
   padding-bottom: 10px;
 }
+
+path{
+  fill: none;
+  stroke-width: 2px;
+  stroke: black;
+}
