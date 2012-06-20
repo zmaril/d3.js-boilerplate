@@ -43,10 +43,11 @@ Click [here for deployed example](http://d3bdashboard.herokuapp.com/).
 
 ### Develop locally
 * Move `cd my-ballin-document`
-* Host `python -m SimpleHTTPServer` or [pyserve &](https://twitter.com/ZackMaril/status/165258473167261698)
+* Host `node app.js`
 * Navigate to localhost:8000
 
 ### Deploy Globally 
+* TODO: Set this up on heroku via node
 * Host - `heroku create my-ballin-document --stack cedar`
 * Commit - `git commit -am "Totes my goats"`
 * Push - `git push heroku master`
@@ -54,6 +55,7 @@ Click [here for deployed example](http://d3bdashboard.herokuapp.com/).
 ### Current TODOS
 * Change example to something cool to attract more people to the
   project.
+* Change instructions/add files needed to get node running on heroku quickly.
 
 ## License
 
