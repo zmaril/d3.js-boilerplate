@@ -29,20 +29,14 @@ XYView = Backbone.View.extend
     @x = d3.scale.linear().domain([0,Math.PI*2]).range([0,width])
     @y = d3.scale.linear().domain([-1,1]).range([width/4,width*3/4])
 
-    view = this
     @line = d3.svg.line()
-      .x((d)->
-        view.x(d.attributes.x))
-      .y((d)->
-        view.y(d.attributes.y))
+      .x((d)=> @x(d.attributes.x))
+      .y((d)=> @y(d.attributes.y))
       .interpolate("cardinal")
-
 
     setInterval(XYs.fetch.bind(XYs),100)
 
   update: ()->
-    view = this
-
     path = @g.selectAll("path").data([XYs.models])
 
     path.enter().append("path")
