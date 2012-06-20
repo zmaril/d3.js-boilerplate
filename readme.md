@@ -47,7 +47,6 @@ Click [here for deployed example](http://d3bdashboard.herokuapp.com/).
 * Navigate to localhost:8000
 
 ### Deploy Globally 
-* TODO: Set this up on heroku via node
 * Host - `heroku create my-ballin-document --stack cedar`
 * Commit - `git commit -am "Totes my goats"`
 * Push - `git push heroku master`
