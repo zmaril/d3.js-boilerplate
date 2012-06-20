@@ -43,8 +43,10 @@ Click [here for deployed example](http://d3bdashboard.herokuapp.com/).
 
 ### Develop locally
 * Move `cd my-ballin-document`
-* Host `node app.js`
-* Navigate to localhost:8000
+* Host `node app.js` (Pro tip: open up a new terminal to do this. The
+  logger talks all the time.)
+* Navigate to localhost:5000
+
 
 ### Deploy Globally 
 * Host - `heroku create my-ballin-document --stack cedar`
