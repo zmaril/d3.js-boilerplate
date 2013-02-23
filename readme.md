@@ -81,8 +81,3 @@ Check each branch for more specific items.
 
 See each branch for licenses. Unless otherwise licensed, this code is
 released into the public domain as is, no warranty attached. 
-
-## Parting Thoughts
-
-[Zack Maril](https://twitter.com/#!/ZackMaril)- Need d3.js work done?
-Contact me at zack@zacharymaril.com or on [oDesk](https://www.odesk.com/users/~~80bea7ba2750c34b). 
